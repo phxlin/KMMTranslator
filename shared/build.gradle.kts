@@ -64,3 +64,10 @@ android {
         targetCompatibility = JavaVersion.VERSION_1_8
     }
 }
+
+sqldelight {
+    database("TranslateDatabase") {
+        packageName = "me.yufan.kmmtranslator.database"
+        sourceFolders = listOf("sqldelight")
+    }
+}
