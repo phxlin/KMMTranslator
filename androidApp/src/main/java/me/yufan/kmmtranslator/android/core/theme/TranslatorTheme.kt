@@ -2,11 +2,11 @@ package me.yufan.kmmtranslator.android.core.theme
 
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.Shapes
-import androidx.compose.material3.Typography
-import androidx.compose.material3.darkColorScheme
-import androidx.compose.material3.lightColorScheme
+import androidx.compose.material.MaterialTheme
+import androidx.compose.material.Shapes
+import androidx.compose.material.Typography
+import androidx.compose.material.darkColors
+import androidx.compose.material.lightColors
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.TextStyle
@@ -23,34 +23,28 @@ fun TranslatorTheme(
     darkTheme: Boolean = isSystemInDarkTheme(),
     content: @Composable () -> Unit
 ) {
-    val accentViolet = Color(Colors.AccentViolet)
-    val lightBlue = Color(Colors.LightBlue)
-    val lightBlueGrey = Color(Colors.LightBlueGrey)
-    val textBlack = Color(Colors.TextBlack)
-    val darkGrey = Color(Colors.DarkGrey)
+    val darkColors = darkColors(
+        primary = accentViolet,
+        background = darkGrey,
+        onPrimary = Color.White,
+        onBackground = Color.White,
+        surface = darkGrey,
+        onSurface = Color.White
+    )
+
+    val lightColors = lightColors(
+        primary = accentViolet,
+        background = lightBlueGrey,
+        onPrimary = Color.White,
+        onBackground = textBlack,
+        surface = Color.White,
+        onSurface = textBlack
+    )
 
     val colors = if (darkTheme) {
-        darkColorScheme(
-            primary = accentViolet,
-            background = darkGrey,
-            onPrimary = Color.White,
-            onBackground = Color.White,
-            surface = darkGrey,
-            onSurface = Color.White,
-            secondary = Color(0xFF03DAC5),
-            tertiary = Color(0xFF3700B3)
-        )
+        darkColors
     } else {
-        lightColorScheme(
-            primary = accentViolet,
-            background = lightBlueGrey,
-            onPrimary = Color.White,
-            onBackground = textBlack,
-            surface = Color.White,
-            onSurface = textBlack,
-            secondary = Color(0xFF03DAC5),
-            tertiary = Color(0xFF3700B3)
-        )
+        lightColors
     }
 
     val sfProText = FontFamily(
@@ -69,31 +63,31 @@ fun TranslatorTheme(
     )
 
     val typography = Typography(
-        headlineLarge = TextStyle(
+        h1 = TextStyle(
             fontFamily = sfProText,
             fontWeight = FontWeight.Bold,
             fontSize = 30.sp
         ),
-        headlineMedium = TextStyle(
+        h2 = TextStyle(
             fontFamily = sfProText,
             fontWeight = FontWeight.Bold,
             fontSize = 24.sp
         ),
-        headlineSmall = TextStyle(
+        h3 = TextStyle(
             fontFamily = sfProText,
             fontWeight = FontWeight.Medium,
             fontSize = 18.sp
         ),
-        bodyLarge = TextStyle(
+        body1 = TextStyle(
             fontFamily = sfProText,
             fontWeight = FontWeight.Normal,
             fontSize = 14.sp
         ),
-        bodyMedium = TextStyle(
+        body2 = TextStyle(
             fontFamily = sfProText,
             fontWeight = FontWeight.Normal,
             fontSize = 12.sp
-        )
+        ),
     )
 
     val shapes = Shapes(
@@ -103,7 +97,7 @@ fun TranslatorTheme(
     )
 
     MaterialTheme(
-        colorScheme = colors,
+        colors = colors,
         typography = typography,
         shapes = shapes,
         content = content

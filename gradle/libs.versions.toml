@@ -10,7 +10,6 @@ junit = "4.13.2"
 kotlin = "1.9.20"
 compose = "1.6.4"
 compose-compiler = "1.5.4"
-compose-material3 = "1.2.1"
 androidx-activityCompose = "1.8.2"
 kotlinGradlePlugin = "1.7.21"
 kotlinxDatetime = "0.4.0"
@@ -46,7 +45,7 @@ compose-ui = { module = "androidx.compose.ui:ui", version.ref = "compose" }
 compose-ui-tooling = { module = "androidx.compose.ui:ui-tooling", version.ref = "compose" }
 compose-ui-tooling-preview = { module = "androidx.compose.ui:ui-tooling-preview", version.ref = "compose" }
 compose-foundation = { module = "androidx.compose.foundation:foundation", version.ref = "compose" }
-compose-material3 = { module = "androidx.compose.material3:material3", version.ref = "compose-material3" }
+compose-material = { module = "androidx.compose.material:material", version.ref = "compose" }
 kotlinx-datetime = { module = "org.jetbrains.kotlinx:kotlinx-datetime", version.ref = "kotlinxDatetime" }
 ktor-client-android = { module = "io.ktor:ktor-client-android", version.ref = "ktorClientAndroid" }
 ktor-client-content-negotiation = { module = "io.ktor:ktor-client-content-negotiation", version.ref = "ktorClientAndroid" }
